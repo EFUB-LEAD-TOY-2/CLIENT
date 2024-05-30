@@ -8,7 +8,7 @@ import List from "../../components/ListPage/List";
 import { ListPage, ListItem } from "../../components/ListPage/ListStyle";
 import dummy from "../../components/ListPage/dummy";
 
-const MusicListPage = () => {
+const RecordListPage = () => {
   return (
     <ListPage>
       <Header />
@@ -124,4 +124,4 @@ const category = [
   },
 ];
 
-export default MusicListPage;
+export default RecordListPage;

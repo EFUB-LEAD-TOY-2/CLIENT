@@ -18,7 +18,7 @@ const dummy = [
     condition: "상",
   },
   {
-    type: "music",
+    type: "record",
     title: "음반 제목",
     publisher: "출판사",
     writer: "지은이",
@@ -36,7 +36,7 @@ const dummy = [
     condition: "상",
   },
   {
-    type: "music",
+    type: "record",
     title: "음반 제목",
     publisher: "출판사",
     writer: "지은이",

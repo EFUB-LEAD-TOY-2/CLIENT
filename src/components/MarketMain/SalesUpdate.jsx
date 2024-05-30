@@ -27,13 +27,13 @@ const SalesUpdate = () => {
         />
         <label htmlFor="radioButtonKor">국내도서</label>
         <input
-          id="radioButtonMusic"
+          id="radioButtonRecord"
           type="radio"
           name="salesUpdate"
           value="음반"
-          onChange={() => setContents(music)}
+          onChange={() => setContents(record)}
         />
-        <label htmlFor="radioButtonMusic">음반</label>
+        <label htmlFor="radioButtonRecord">음반</label>
         <input
           id="radioButtonDvd"
           type="radio"
@@ -131,7 +131,7 @@ const Article = styled.article`
 
 const all = [286148, 8321];
 const kor = [0, 0];
-const music = [0, 0];
+const record = [0, 0];
 const dvd = [0, 0];
 
 export default SalesUpdate;

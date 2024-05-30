@@ -8,7 +8,7 @@ import GoodsDetailPage from "./pages/detailPage/GoodsDetailPage";
 import MarketMainPage from "./pages/MarketMainPage/MarketMainPage";
 import CartPage from "./pages/CartPage/CartPage";
 import BookListPage from "./pages/listPage/BookListPage";
-import MusicListPage from "./pages/listPage/MusicListPage";
+import RecordListPage from "./pages/listPage/RecordListPage";
 import GoodsListPage from "./pages/listPage/GoodsListPage";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
       />
       <Route path="/cart" element={<CartPage />} />
       <Route path="/list/book" element={<BookListPage />} />
-      <Route path="/list/music" element={<MusicListPage />} />
+      <Route path="/list/record" element={<RecordListPage />} />
       <Route path="/list/goods" element={<GoodsListPage />} />
     </Routes>
   );
