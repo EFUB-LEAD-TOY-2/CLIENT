@@ -1,5 +1,7 @@
 import cross_section_part from "../../assets/detail/cross_section_part.svg";
 import styled from "styled-components";
+import { postCart } from "../../services/api/carts";
+import { useNavigate } from "react-router-dom";
 const Detail = ({
   img,
   title_text,
@@ -10,7 +12,21 @@ const Detail = ({
   regular_price,
   location,
   type,
+  itemId,
 }) => {
+  const navigate = useNavigate();
+
+  const addToCart = id => {
+    postCart(id)
+      .then(res => {
+        alert(res.data.message);
+      })
+      .catch(err => {
+        alert("로그인 후 이용 가능합니다.");
+        navigate("/login");
+      });
+  };
+
   return (
     <DetailBox>
       <div className="detail-top">
@@ -27,7 +43,10 @@ const Detail = ({
                 <div className="stock-location">
                   <div className="stock">
                     <p className="stock-text"></p>재고:
-                    <p className="stock-value">{stock}부</p>
+                    <p className="stock-value">
+                      {stock}
+                      {type == "도서" ? "부" : "개"}
+                    </p>
                   </div>
                   <div className="location">
                     {type} 위치: <p>{location}</p>
@@ -38,7 +57,7 @@ const Detail = ({
               <>
                 <div className="stock">
                   <p className="stock-text"></p>재고:
-                  <p className="stock-value">{stock}부</p>
+                  <p className="stock-value">{stock}개</p>
                 </div>
               </>
             )}
@@ -56,7 +75,9 @@ const Detail = ({
             {type === "상품" ? (
               <div className="buttons">
                 <button className="online-purchase">온라인 구매</button>
-                <button className="add-cart">장바구니 추가</button>
+                <button className="add-cart" onClick={() => addToCart(itemId)}>
+                  장바구니 추가
+                </button>
               </div>
             ) : (
               <></>

@@ -4,6 +4,8 @@ import DetailTab2 from "../../components/detail/DetailTap2";
 import { useState, useEffect } from "react";
 import { ProductDetail, getProduct } from "../../services/api/example";
 import { useParams } from "react-router-dom";
+import Header from "../../components/common/Header";
+import Footer from "../../components/common/Footer";
 
 const GoodsDetailPage = () => {
   const { productId } = useParams();
@@ -39,6 +41,7 @@ const GoodsDetailPage = () => {
 
   return (
     <>
+      <Header />
       <DetailStyle>
         <DetailWrapper>
           <Detail
@@ -51,10 +54,12 @@ const GoodsDetailPage = () => {
             location={data.data && lowestPriceItem.location}
             type="상품"
             img={img}
+            itemId={data.data && data.data.items.items[0].itemId}
           />
           <DetailTab2 />
         </DetailWrapper>
       </DetailStyle>
+      <Footer />
     </>
   );
 };

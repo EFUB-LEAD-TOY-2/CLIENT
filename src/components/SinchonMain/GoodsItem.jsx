@@ -5,7 +5,7 @@ const GoodsItem = ({ book, name, price, productId }) => {
   const navigate = useNavigate();
 
   const ProductDetail = () => {
-    navigate(`/sinchonMain/goodsDetail/${productId}`);
+    navigate(`/goodsDetail/${productId}`);
   };
   return (
     <Item>
@@ -15,7 +15,7 @@ const GoodsItem = ({ book, name, price, productId }) => {
         </div>
         <div className="name">{name}</div>
         <div className="price-discount">
-          <div className="price">{price}</div>
+          <div className="price">{price}원</div>
         </div>
       </div>
     </Item>
